@@ -1,8 +1,8 @@
 package com.cirion.taskManager.task.application.api;
 
-import com.cirion.taskManager.task.domain.PriorityTask;
+import com.cirion.taskManager.task.domain.TaskPriority;
 import jakarta.validation.constraints.NotBlank;
-import jakarta.validation.constraints.NotEmpty;
+import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
 import lombok.Value;
 
@@ -11,6 +11,6 @@ public class TaskRequest {
     @NotBlank
     @Size(min = 4)
     private String taskName;
-    @NotEmpty
-    private PriorityTask priorityTask;
+    @NotNull
+    private TaskPriority taskPriority;
 }

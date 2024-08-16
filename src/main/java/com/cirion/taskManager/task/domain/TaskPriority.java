@@ -1,5 +1,5 @@
 package com.cirion.taskManager.task.domain;
 
-public enum PriorityTask {
+public enum TaskPriority {
     LOW, MEDIUM, HIGH
 }
