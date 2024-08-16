@@ -5,6 +5,8 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.List;
+
 @Log4j2
 @RestController
 @RequiredArgsConstructor
@@ -18,5 +20,13 @@ public class TaskController implements TaskAPI{
         TaskResponse taskCreated = taskService.createTask(taskRequest);
         log.info("[Finish] TaskController - createTask");
         return taskCreated;
+    }
+
+    @Override
+    public List<TaskListResponse> listTasks() {
+        log.info("[Start] TaskController - listTask");
+        List<TaskListResponse> tasks = taskService.listTasks();
+        log.info("[Finish] TaskController - listTask");
+        return null;
     }
 }
