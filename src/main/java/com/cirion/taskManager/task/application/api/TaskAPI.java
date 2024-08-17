@@ -21,4 +21,9 @@ public interface TaskAPI {
     @GetMapping("/{idTask}")
     @ResponseStatus(code = HttpStatus.OK)
     TaskDetailResponse findTask(@PathVariable UUID idTask);
+
+    @PatchMapping("/{idTask}")
+    @ResponseStatus(code = HttpStatus.NO_CONTENT)
+    void updateTask(@PathVariable UUID idTask,
+                    @Valid @RequestBody TaskUpdateRequest taskUpdateRequest);
 }

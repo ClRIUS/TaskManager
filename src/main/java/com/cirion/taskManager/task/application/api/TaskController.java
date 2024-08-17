@@ -39,4 +39,11 @@ public class TaskController implements TaskAPI{
         log.info("[Finish] TaskController - findTask");
         return taskDetailResponse;
     }
+
+    @Override
+    public void updateTask(UUID idTask, TaskUpdateRequest taskUpdateRequest) {
+        log.info("[Start] TaskController - updateTask");
+        log.info("[idTask] {}", idTask);
+        log.info("[Finish] TaskController - updateTask");
+    }
 }
