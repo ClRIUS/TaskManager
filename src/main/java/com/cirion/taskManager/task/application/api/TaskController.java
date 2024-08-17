@@ -27,6 +27,6 @@ public class TaskController implements TaskAPI{
         log.info("[Start] TaskController - listTasks");
         List<TaskListResponse> tasks = taskService.listTasks();
         log.info("[Finish] TaskController - listTasks");
-        return null;
+        return tasks;
     }
 }

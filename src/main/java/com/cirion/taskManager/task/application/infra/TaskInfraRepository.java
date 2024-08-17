@@ -27,7 +27,8 @@ public class TaskInfraRepository implements TaskRepository {
     @Override
     public List<Task> listAllTasks() {
         log.info("[Start] TaskInfraRepository - listAllTasks");
+        List<Task> allTasks = taskSpringDataRepository.findAll();
         log.info("[Finish] TaskInfraRepository - listAllTasks");
-        return null;
+        return allTasks;
     }
 }
