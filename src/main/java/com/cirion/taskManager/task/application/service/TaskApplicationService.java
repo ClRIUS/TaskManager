@@ -1,5 +1,6 @@
 package com.cirion.taskManager.task.application.service;
 
+import com.cirion.taskManager.task.application.api.TaskDetailResponse;
 import com.cirion.taskManager.task.application.api.TaskListResponse;
 import com.cirion.taskManager.task.application.api.TaskRequest;
 import com.cirion.taskManager.task.application.api.TaskResponse;
@@ -10,6 +11,7 @@ import lombok.extern.log4j.Log4j2;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.UUID;
 
 @Log4j2
 @Service
@@ -33,5 +35,13 @@ public class TaskApplicationService implements TaskService{
         List<Task> tasks = taskRepository.listAllTasks();
         log.info("[Finish] TaskApplicationService - listTasks");
         return TaskListResponse.convert(tasks);
+    }
+
+    @Override
+    public TaskDetailResponse findTask(UUID idTask) {
+        log.info("[Start] TaskApplicationService - findTask");
+        Task task = taskRepository.findTaskById(idTask);
+        log.info("[Finish] TaskApplicationService - findTask");
+        return new TaskDetailResponse(task);
     }
 }

@@ -8,12 +8,12 @@ import org.antlr.v4.runtime.misc.LogManager;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
+import java.util.UUID;
 
 @Repository
 @Log4j2
 @RequiredArgsConstructor
 public class TaskInfraRepository implements TaskRepository {
-
     private final TaskSpringDataRepository taskSpringDataRepository;
 
     @Override
@@ -30,5 +30,14 @@ public class TaskInfraRepository implements TaskRepository {
         List<Task> allTasks = taskSpringDataRepository.findAll();
         log.info("[Finish] TaskInfraRepository - listAllTasks");
         return allTasks;
+    }
+
+    @Override
+    public Task findTaskById(UUID idTask) {
+        log.info("[Start] TaskInfraRepository - findTaskById");
+        Task task = taskSpringDataRepository.findById(idTask)
+                .orElseThrow(() -> new RuntimeException("Task not Found!"));
+        log.info("[Finish] TaskInfraRepository - findTaskById");
+        return task;
     }
 }
