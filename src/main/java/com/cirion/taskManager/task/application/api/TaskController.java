@@ -6,6 +6,7 @@ import lombok.extern.log4j.Log4j2;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
+import java.util.UUID;
 
 @Log4j2
 @RestController
@@ -28,5 +29,13 @@ public class TaskController implements TaskAPI{
         List<TaskListResponse> tasks = taskService.listTasks();
         log.info("[Finish] TaskController - listTasks");
         return tasks;
+    }
+
+    @Override
+    public TaskDetailResponse findTask(UUID idTask) {
+        log.info("[Start] TaskController - findTask");
+        log.info("[idUsuario] {}", idTask);
+        log.info("[Finish] TaskController - findTask");
+        return null;
     }
 }
