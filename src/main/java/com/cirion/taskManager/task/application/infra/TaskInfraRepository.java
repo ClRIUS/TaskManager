@@ -7,6 +7,8 @@ import lombok.extern.log4j.Log4j2;
 import org.antlr.v4.runtime.misc.LogManager;
 import org.springframework.stereotype.Repository;
 
+import java.util.List;
+
 @Repository
 @Log4j2
 @RequiredArgsConstructor
@@ -20,5 +22,12 @@ public class TaskInfraRepository implements TaskRepository {
         taskSpringDataRepository.save(task);
         log.info("[Finish] TaskInfraRepository - saveTask");
         return task;
+    }
+
+    @Override
+    public List<Task> listAllTasks() {
+        log.info("[Start] TaskInfraRepository - listAllTasks");
+        log.info("[Finish] TaskInfraRepository - listAllTasks");
+        return null;
     }
 }

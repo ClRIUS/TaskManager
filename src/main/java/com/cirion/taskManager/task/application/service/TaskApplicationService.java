@@ -30,7 +30,8 @@ public class TaskApplicationService implements TaskService{
     @Override
     public List<TaskListResponse> listTasks() {
         log.info("[Start] TaskApplicationService - listTasks");
+        List<Task> tasks = taskRepository.listAllTasks();
         log.info("[Finish] TaskApplicationService - listTasks");
-        return null;
+        return TaskListResponse.convert(tasks);
     }
 }

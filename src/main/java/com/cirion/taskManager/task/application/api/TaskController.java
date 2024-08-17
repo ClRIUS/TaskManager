@@ -24,9 +24,9 @@ public class TaskController implements TaskAPI{
 
     @Override
     public List<TaskListResponse> listTasks() {
-        log.info("[Start] TaskController - listTask");
+        log.info("[Start] TaskController - listTasks");
         List<TaskListResponse> tasks = taskService.listTasks();
-        log.info("[Finish] TaskController - listTask");
+        log.info("[Finish] TaskController - listTasks");
         return null;
     }
 }
