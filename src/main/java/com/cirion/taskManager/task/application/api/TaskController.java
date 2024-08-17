@@ -44,6 +44,7 @@ public class TaskController implements TaskAPI{
     public void updateTask(UUID idTask, TaskUpdateRequest taskUpdateRequest) {
         log.info("[Start] TaskController - updateTask");
         log.info("[idTask] {}", idTask);
+        taskService.updateTask(idTask, taskUpdateRequest);
         log.info("[Finish] TaskController - updateTask");
     }
 }

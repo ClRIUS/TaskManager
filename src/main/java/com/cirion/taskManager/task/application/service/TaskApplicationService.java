@@ -1,9 +1,6 @@
 package com.cirion.taskManager.task.application.service;
 
-import com.cirion.taskManager.task.application.api.TaskDetailResponse;
-import com.cirion.taskManager.task.application.api.TaskListResponse;
-import com.cirion.taskManager.task.application.api.TaskRequest;
-import com.cirion.taskManager.task.application.api.TaskResponse;
+import com.cirion.taskManager.task.application.api.*;
 import com.cirion.taskManager.task.application.repository.TaskRepository;
 import com.cirion.taskManager.task.domain.Task;
 import lombok.RequiredArgsConstructor;
@@ -43,5 +40,11 @@ public class TaskApplicationService implements TaskService{
         Task task = taskRepository.findTaskById(idTask);
         log.info("[Finish] TaskApplicationService - findTask");
         return new TaskDetailResponse(task);
+    }
+
+    @Override
+    public void updateTask(UUID idTask, TaskUpdateRequest taskUpdateRequest) {
+        log.info("[Start] TaskApplicationService - updateTask");
+        log.info("[Finish] TaskApplicationService - updateTask");
     }
 }
