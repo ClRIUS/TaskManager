@@ -13,4 +13,5 @@ public class TaskUpdateRequest {
     private String taskName;
     @NotNull
     private TaskPriority taskPriority;
+    private boolean completed;
 }

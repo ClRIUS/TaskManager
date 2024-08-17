@@ -45,6 +45,9 @@ public class TaskApplicationService implements TaskService{
     @Override
     public void updateTask(UUID idTask, TaskUpdateRequest taskUpdateRequest) {
         log.info("[Start] TaskApplicationService - updateTask");
+        Task task = taskRepository.findTaskById(idTask);
+        task.updateTask(taskUpdateRequest);
+        taskRepository.saveTask(task);
         log.info("[Finish] TaskApplicationService - updateTask");
     }
 }

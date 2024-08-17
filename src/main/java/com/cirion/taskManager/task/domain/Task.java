@@ -1,6 +1,7 @@
 package com.cirion.taskManager.task.domain;
 
 import com.cirion.taskManager.task.application.api.TaskRequest;
+import com.cirion.taskManager.task.application.api.TaskUpdateRequest;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
@@ -26,5 +27,11 @@ public class Task {
     public Task(TaskRequest taskRequest) {
         this.taskName = taskRequest.getTaskName();
         this.taskPriority = taskRequest.getTaskPriority();
+    }
+
+    public void updateTask(TaskUpdateRequest taskRequest) {
+        this.taskName = taskRequest.getTaskName();
+        this.taskPriority = taskRequest.getTaskPriority();
+        this.completed = taskRequest.isCompleted();
     }
 }
