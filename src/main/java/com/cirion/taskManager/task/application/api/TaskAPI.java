@@ -26,4 +26,8 @@ public interface TaskAPI {
     @ResponseStatus(code = HttpStatus.NO_CONTENT)
     void updateTask(@PathVariable UUID idTask,
                     @Valid @RequestBody TaskUpdateRequest taskUpdateRequest);
+
+    @DeleteMapping("/{idTask}")
+    @ResponseStatus(code = HttpStatus.NO_CONTENT)
+    void deleteTask(@PathVariable UUID idTask);
 }

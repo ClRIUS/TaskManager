@@ -47,4 +47,12 @@ public class TaskController implements TaskAPI{
         taskService.updateTask(idTask, taskUpdateRequest);
         log.info("[Finish] TaskController - updateTask");
     }
+
+    @Override
+    public void deleteTask(UUID idTask) {
+        log.info("[Start] TaskController - deleteTask");
+        log.info("[idTask] {}", idTask);
+        taskService.deleteTask(idTask);
+        log.info("[Finish] TaskController - deleteTask");
+    }
 }
