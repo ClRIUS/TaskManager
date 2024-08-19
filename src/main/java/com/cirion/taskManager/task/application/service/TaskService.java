@@ -10,4 +10,5 @@ public interface TaskService {
     List<TaskListResponse> listTasks();
     TaskDetailResponse findTask(UUID idTask);
     void updateTask(UUID idTask, TaskUpdateRequest taskUpdateRequest);
+    void deleteTask(UUID idTask);
 }

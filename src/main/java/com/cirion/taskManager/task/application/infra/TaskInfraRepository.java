@@ -40,4 +40,11 @@ public class TaskInfraRepository implements TaskRepository {
         log.info("[Finish] TaskInfraRepository - findTaskById");
         return task;
     }
+
+    @Override
+    public void deleteTaskById(Task task) {
+        log.info("[Start] TaskInfraRepository - deleteTaskById");
+        taskSpringDataRepository.delete(task);
+        log.info("[Finish] TaskInfraRepository - deleteTaskById");
+    }
 }

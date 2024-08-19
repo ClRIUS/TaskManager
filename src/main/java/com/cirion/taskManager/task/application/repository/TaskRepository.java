@@ -9,4 +9,5 @@ public interface TaskRepository {
     Task saveTask(Task task);
     List<Task> listAllTasks();
     Task findTaskById(UUID idTask);
+    void deleteTaskById(Task task);
 }

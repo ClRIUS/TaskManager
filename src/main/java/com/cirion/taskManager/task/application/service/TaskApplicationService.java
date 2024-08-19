@@ -50,4 +50,12 @@ public class TaskApplicationService implements TaskService{
         taskRepository.saveTask(task);
         log.info("[Finish] TaskApplicationService - updateTask");
     }
+
+    @Override
+    public void deleteTask(UUID idTask) {
+        log.info("[Start] TaskApplicationService - deleteTask");
+        Task task = taskRepository.findTaskById(idTask);
+        taskRepository.deleteTaskById(task);
+        log.info("[Finish] TaskApplicationService - deleteTask");
+    }
 }
